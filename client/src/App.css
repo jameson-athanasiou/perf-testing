@@ -40,3 +40,57 @@
 .read-the-docs {
   color: #888;
 }
+
+.status {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.status--connecting  { background: #555;   color: #ccc; }
+.status--connected   { background: #1a7f3c; color: #d4f5e2; }
+.status--disconnected{ background: #7f3a1a; color: #f5e2d4; }
+.status--error       { background: #7f1a1a; color: #f5d4d4; }
+
+.message-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  background: #1a1a1a;
+  animation: fade-in 0.2s ease;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: #888;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.message-text {
+  font-family: monospace;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

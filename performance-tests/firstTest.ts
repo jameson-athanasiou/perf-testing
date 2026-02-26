@@ -1,6 +1,7 @@
 import http from 'k6/http';
 import { sleep } from 'k6';
 import { Counter } from 'k6/metrics';
+import ws from 'k6/ws';
 
 // export const options = {
 //   duration: '10s',
@@ -22,7 +23,7 @@ export const options = {
   // Key configurations for breakpoint in this section
   executor: 'ramping-arrival-rate', //Assure load increase if the system slows
   stages: [
-    { duration: '2m', target: 2000 }, // just slowly ramp-up to a HUGE load
+    { duration: '1m', target: 1000 }, // just slowly ramp-up to a HUGE load
   ],
 };
 
@@ -67,6 +68,16 @@ export default function () {
   setNewError(response);
 
   if (response.status !== 200) console.log(response.status)
+
+  const wsUrl = `wss://quickpizza.grafana.com/ws`;
+  const params = { tags: { my_tag: 'my ws session' } };
+  const user = `user_${__VU}`;
+
+   const wsRes = ws.connect(wsUrl, params, function (socket) {
+    socket.on('open', function open() {
+    //   console.log(`VU ${__VU}: connected`);
+    })
+})
 
 }
 

@@ -24,7 +24,8 @@
   "homepage": "https://github.com/jameson-athanasiou/perf-testing#readme",
   "dependencies": {
     "express": "^5.2.1",
-    "express-rate-limit": "^8.2.1"
+    "express-rate-limit": "^8.2.1",
+    "ws": "^8.19.0"
   },
   "devDependencies": {
     "@types/k6": "^1.6.0"
