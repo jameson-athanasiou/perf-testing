@@ -1,0 +1,28 @@
+{
+  "name": "perf-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "npm run build --prefix client",
+    "dev": "npm run dev --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameson-athanasiou/perf-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jameson-athanasiou/perf-testing/issues"
+  },
+  "homepage": "https://github.com/jameson-athanasiou/perf-testing#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1"
+  }
+}
