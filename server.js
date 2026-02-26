@@ -10,9 +10,14 @@ const limiter = rateLimit({
   max: 100,
 });
 
-app.use(limiter);
+// app.use(limiter);
 
 app.use(express.static(path.join(__dirname, 'client/dist')));
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+})
+
 
 app.get('/{*path}', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));

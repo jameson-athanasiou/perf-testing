@@ -7,6 +7,7 @@
     "start": "node server.js",
     "build": "npm run build --prefix client",
     "dev": "npm run dev --prefix client",
+    "test:performance": "K6_WEB_DASHBOARD=true  K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run performance-tests/firstTest.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +25,8 @@
   "dependencies": {
     "express": "^5.2.1",
     "express-rate-limit": "^8.2.1"
+  },
+  "devDependencies": {
+    "@types/k6": "^1.6.0"
   }
 }
